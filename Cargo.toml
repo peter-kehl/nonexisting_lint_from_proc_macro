@@ -1,0 +1,3 @@
+[workspace]
+members = ["proc_mac", "use_cases"]
+default-members = ["proc_mac", "use_cases"]
