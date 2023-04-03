@@ -9,6 +9,7 @@ fn _pure_macro_rules_reports_non_existing_lints_fine() {
     // The following gets reported
     // - only by `cargo clippy --all`
     // - but NOT by `cargo check --all`
+    //
     // Ok. So be it.
     pure_macro_rules_simply_allow!(
         clippy::non_existing_lint_here_gets_reported_and_we_are_happy,
@@ -20,7 +21,7 @@ fn _pure_macro_rules_reports_non_existing_lints_fine() {
     // - `cargo clippy --all`
     pure_macro_rules_simply_allow!(std_non_existing_lint_here_gets_reported_and_we_are_happy, {
     });
-    
+
     // The following gets reported by NEITHER
     // - `cargo check --all`
     // - `cargo clippy --all`
