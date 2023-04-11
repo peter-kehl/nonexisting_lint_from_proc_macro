@@ -60,12 +60,14 @@ pub fn non_existing_std_lint_name_from_proc_macro(_: TokenStream) -> TokenStream
     let mut group_braces = Group::new(Delimiter::Brace, TokenStream::new());
     group_braces.set_span(span());
 
-    TokenStream::from_iter([
+    let stream = TokenStream::from_iter([
         with_span(TokenTree::Punct(hash)),
         with_span(TokenTree::Group(group_bracket)),
         with_span(TokenTree::Ident(Ident::new("fn", span()))),
         with_span(TokenTree::Ident(Ident::new("_f", span()))),
         with_span(TokenTree::Group(group_parens)),
         with_span(TokenTree::Group(group_braces)),
-    ])
+    ]);
+    eprintln!("Output: {:?}", stream);
+    stream
 }
